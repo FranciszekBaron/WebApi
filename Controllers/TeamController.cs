@@ -23,6 +23,7 @@ namespace WebApplication1.Controllers
             return Ok((await _service.team.GetAll().ToListAsync()).Select(e => new TeamGet
             {
                 teamID = e.teamID,
+                oID = e.oID,
                 teamName = e.teamName,
                 teamDescription = e.teamDescription
             }
