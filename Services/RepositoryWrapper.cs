@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models;
+using WebApplication1.Models.DTO_s;
 
 namespace WebApplication1.Services
 {
@@ -9,8 +10,24 @@ namespace WebApplication1.Services
         private IMemberService _member;
         private IOrganizationService _organization;
         private ITeamService _team;
+        private IMemberShipService _membership;
+       
         public RepositoryWrapper(OrganDbContext dbContext) {
            _dbContext = dbContext;
+        }
+
+
+        public IMemberShipService membership
+        {
+            get
+            {
+                if(_membership is null)
+                {
+                    _membership = new MemberShipService(_dbContext);
+
+                }
+                return _membership;
+            }
         }
 
         public IMemberService member
@@ -49,11 +66,60 @@ namespace WebApplication1.Services
             }
         }
 
+        public async Task addTwo(MemberPut body, int teamID)
+        {
+            var member = new Member
+            {
+                oID = body.oID,
+                memberName = body.memberName,
+                memberSurname = body.memberSurname,
+                memberNickname = body.memberNickname,
+
+            };
+
+            var membership = new Membership
+            {
+                memberID = body.oID,
+                teamID = teamID,
+                MembershipDate = DateTime.Now
+            };
+
+            _dbContext.Add(member);
+             _dbContext.Add(membership);
+            await _dbContext.SaveChangesAsync();
+        }
+
         
+
+        public Task BeginTransactionAsync()
+        {
+            
+            return _dbContext.Database.BeginTransactionAsync();
+        }
+
+        public async Task CommitTransactionAsync()
+        {
+            await _dbContext.Database.CommitTransactionAsync();
+        }
+
+        public async Task Dispose()
+        {
+            await _dbContext.DisposeAsync();
+        }
+
+        public async Task RollbackTransactionAsync()
+        {
+            await _dbContext.Database.RollbackTransactionAsync();
+        }
 
         public async Task saveAync()
         {
             await _dbContext.SaveChangesAsync();
+        }
+
+        public Task TransactionScope()
+        {
+            throw new NotImplementedException();
         }
     }
 }

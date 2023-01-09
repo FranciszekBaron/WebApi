@@ -9,6 +9,10 @@ namespace WebApplication1.Services
         public void DeleteMember(Member member);
         public void UpdateMember(Member member);
 
+        public Task<Member> addToTeam(int memberID, int teamID);
+
+        public Task<Member> addWithTeam(Member member, Team team);
+
 
         public Task<Member> GetByIdAsync(int id);
 

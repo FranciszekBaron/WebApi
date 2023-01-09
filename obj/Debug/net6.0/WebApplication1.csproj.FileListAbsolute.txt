@@ -85,3 +85,11 @@ C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\r
 C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.Extensions.Logging.File.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.Sinks.Async.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\Franczi\source\repos\WebApplication1\WebApplication1\bin\Debug\net6.0\Serilog.Sinks.RollingFile.dll
